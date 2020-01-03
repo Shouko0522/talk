@@ -3,8 +3,8 @@
     <p>type anythind</p>
     <div class="row">
       <% @chatroom.messages.each do |element| %>
-        <div class="col-2">TIME_STAMP</div>
-        <div class="col-10"><%= element.comment %></div>
+        <div class="col-4"><%= element.created_at %></div>
+        <div class="col-8"><%= element.comment %></div>
       <% end %>
     </div>
       <%= form_for(@message, url: new_message_path) do |f| %>

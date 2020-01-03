@@ -13,6 +13,8 @@ class TalksController < ApplicationController
     @message = Message.new(message_params)
     @message.chat_room = @chatroom
     @message.save
+
+    redirect_to get_chatroom_path(@chatroom)
   end
 
   private
