@@ -2,7 +2,10 @@
   <h1>Chat room list</h1>
   <p>Rooms found: <%= @chatroom.count %></p>
   <ul>
-    <p><%= link_to "Chat room 1", "talks_chatroom_path" %></p>
+    <% @chatroom.each do |element| %>
+      <li><%= link_to element.name, "talks_chatroom_path"  %></li>
+    <% end %>
   </ul>
 </body>
+
 
