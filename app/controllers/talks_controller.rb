@@ -1,6 +1,14 @@
 class TalksController < ApplicationController
   def list
     @chatroom = ChatRoom.all
+    @new_chatroom = ChatRoom.new
+  end
+
+  def create_chatroom
+    @new_chatroom = ChatRoom.new(chatroom_params)
+    @new_chatroom.save
+
+    redirect_to get_chatroom_path(@new_chatroom)
   end
 
   def chatroom
@@ -21,6 +29,10 @@ class TalksController < ApplicationController
 
   def message_params
     params.require(:message).permit(:comment)
+  end
+
+  def chatroom_params
+    params.require(:chat_room).permit(:name, :comment)
   end
 
 end

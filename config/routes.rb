@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   post "talks/:id", to: "talks#send_message", as: "new_message"
 
+  post "talks", to: "talks#create_chatroom", as: "new_chatroom"
   # get "tasks/:id", to: "tasks#show", as: :task
 
   # get "tasks/:id/edit", to: "tasks#edit", as: :task_edit

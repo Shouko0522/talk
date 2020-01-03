@@ -6,6 +6,19 @@
       <li><%= link_to element.name, get_chatroom_path(element)  %></li>
     <% end %>
   </ul>
+
+  <p>OR!</p>
+
+  <p>Make your own chat room.</p>
+
+  <%= form_for(@new_chatroom, url: new_chatroom_path) do |f| %>
+    <%= f.label :name  %>
+    <%= f.text_field :name %>
+    <%= f.label :comment  %>
+    <%= f.text_field :comment %>
+    <%= f.submit %>
+
+  <% end %>
 </body>
 
 
