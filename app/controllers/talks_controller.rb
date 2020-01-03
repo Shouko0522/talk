@@ -3,8 +3,8 @@ class TalksController < ApplicationController
     @chatroom = ChatRoom.all
   end
 
-  def edit
-    @message = Message.find(params[:id])
+  def chatroom
+    @chatroom= ChatRoom.find(params[:id])
   end
 
   def update
