@@ -1,0 +1,16 @@
+<body>
+  <h1><%= @chatroom.name %></h1>
+    <p>type anythind</p>
+    <div class="row">
+      <% @chatroom.messages.each do |element| %>
+        <div class="col-2">TIME_STAMP</div>
+        <div class="col-10"><%= element.comment %></div>
+      <% end %>
+    </div>
+      <%= form_for(@message, url: new_message_path) do |f| %>
+        <%= f.label :comment  %>
+        <%= f.text_field :comment %>
+
+        <%= f.submit %>
+      <% end %>
+</body>

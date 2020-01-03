@@ -3,7 +3,7 @@
   <p>Rooms found: <%= @chatroom.count %></p>
   <ul>
     <% @chatroom.each do |element| %>
-      <li><%= link_to element.name, my_helper_path(element)  %></li>
+      <li><%= link_to element.name, get_chatroom_path(element)  %></li>
     <% end %>
   </ul>
 </body>

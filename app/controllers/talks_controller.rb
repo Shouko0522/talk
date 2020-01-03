@@ -5,21 +5,20 @@ class TalksController < ApplicationController
 
   def chatroom
     @chatroom= ChatRoom.find(params[:id])
+    @message = Message.new
   end
 
-  def update
-    @message = Message.find(params[:id])
-    @message.update(message_params)
-    # {}
-
-    # no need for app/views/restaurants/update.html.erb
-    redirect_to messages_path
+  def send_message
+    @chatroom= ChatRoom.find(params[:id])
+    @message = Message.new(message_params)
+    @message.chat_room = @chatroom
+    @message.save
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:title, :details)
+    params.require(:message).permit(:comment)
   end
 
 end

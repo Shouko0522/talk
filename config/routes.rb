@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "talks", to: "talks#list"
 
-  get "talks/:id", to: "talks#chatroom", as: "my_helper"
+  get "talks/:id", to: "talks#chatroom", as: "get_chatroom"
+
+  post "talks/:id", to: "talks#send_message", as: "new_message"
 
   # get "tasks/:id", to: "tasks#show", as: :task
 
